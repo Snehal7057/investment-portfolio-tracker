@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Portfolio Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Investment Portfolio Tracker</h1>
+        </header>
+
+        <main class="main-content">
+            <section class="portfolio-summary">
+                <h2>Total Portfolio Value: <span id="total-value">$0.00</span></h2>
+                <button id="add-investment-button">Add New Investment</button>
+            </section>
+
+            <section class="investment-list">
+                <h2>Investment List:</h2>
+                <table id="investment-table">
+                    <thead>
+                        <tr>
+                            <th>Asset Name</th>
+                            <th>Invested</th>
+                            <th>Current</th>
+                            <th>% Change</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Investment rows will be dynamically added here -->
+                    </tbody>
+                </table>
+                <div id="pie-chart"></div>
+            </section>
+
+            <!-- Add New Investment Form -->
+            <div id="add-investment-form" class="form-container hidden">
+                <h2>Add New Investment</h2>
+                <label for="new-asset-name">Asset Name:</label>
+                <input type="text" id="new-asset-name">
+                <label for="new-invested">Amount Invested:</label>
+                <input type="number" id="new-invested" step="0.01">
+                <label for="new-current-value">Current Value:</label>
+                <input type="number" id="new-current-value" step="0.01">
+                <button id="submit-new-investment">Add Investment</button>
+            </div>
+
+            <!-- Update Investment Form -->
+            <div id="update-investment-form" class="form-container hidden">
+                <h2>Update Investment</h2>
+                <input type="hidden" id="update-asset-index">
+                <label for="update-asset-name">Asset Name:</label>
+                <input type="text" id="update-asset-name">
+                <label for="update-invested">Amount Invested:</label>
+                <input type="number" id="update-invested" step="0.01">
+                <label for="update-current-value">Current Value:</label>
+                <input type="number" id="update-current-value" step="0.01">
+                <button id="submit-update-investment">Update Investment</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Investment Portfolio Tracker</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For pie chart visualization -->
+</body>
+</html>
